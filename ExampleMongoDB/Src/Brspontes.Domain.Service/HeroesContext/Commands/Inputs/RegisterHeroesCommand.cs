@@ -17,7 +17,7 @@ namespace Brspontes.Domain.Service.Mongo.HeroesContext.Commands.Inputs
 
             Valid();
         }
-        public ObjectId Id { get; set; }
+        public ObjectId Id { get; private set; }
         public string Name { get; set; }
         public string SuperHeroName { get; set; }
         public string Image { get; set; }

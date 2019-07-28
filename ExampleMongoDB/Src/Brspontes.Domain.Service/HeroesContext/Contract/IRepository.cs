@@ -11,8 +11,8 @@ namespace Brspontes.Domain.Service.Mongo.HeroesContext.Contract
     {
         RegisterHeroCommandResult Save(Heroes hero);
         UpdateHeroCommandResult Update(Heroes Hero);
-        IEnumerable<GetAllQueryResult> Get();
-        GetByIdQueryResult Get(ObjectId id);
+        IEnumerable<Heroes> Get();
+        Heroes Get(ObjectId id);
         DeleteHeroCommandResult Remove(ObjectId id);
     }
 }
