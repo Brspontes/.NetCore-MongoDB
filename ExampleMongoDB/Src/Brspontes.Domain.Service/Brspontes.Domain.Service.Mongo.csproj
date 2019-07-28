@@ -6,14 +6,15 @@
 
   <ItemGroup>
     <Folder Include="HeroesContext\AutoMapper\" />
-    <Folder Include="HeroesContext\Commands\Outputs\" />
-    <Folder Include="HeroesContext\Handle\" />
-    <Folder Include="HeroesContext\QueriesResults\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="FluentValidator" Version="2.0.4" />
     <PackageReference Include="MongoDB.Driver" Version="2.8.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Brspontes.Domain.Mongo\Brspontes.Domain.Mongo.csproj" />
   </ItemGroup>
 
 </Project>

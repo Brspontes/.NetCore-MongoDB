@@ -6,7 +6,14 @@
 
   <ItemGroup>
     <Folder Include="MongoContext\" />
-    <Folder Include="Repository\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MongoDB.Driver" Version="2.8.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Brspontes.Domain.Service\Brspontes.Domain.Service.Mongo.csproj" />
   </ItemGroup>
 
 </Project>
