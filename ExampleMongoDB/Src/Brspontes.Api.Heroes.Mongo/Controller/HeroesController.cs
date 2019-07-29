@@ -8,6 +8,7 @@ using Brspontes.Domain.Service.Mongo.HeroesContext.Contract;
 using Brspontes.Domain.Service.Mongo.HeroesContext.Handle;
 using Brspontes.Domain.Service.Mongo.HeroesContext.QueriesResults;
 using Microsoft.AspNetCore.Mvc;
+using MongoDB.Bson;
 
 namespace Brspontes.Api.Heroes.Mongo.Controller
 {
@@ -29,5 +30,21 @@ namespace Brspontes.Api.Heroes.Mongo.Controller
         [Route("heroes")]
         public IEnumerable<GetAllQueryResult> Get() => 
             _heroesHandle.Get();
+
+        [HttpGet]
+        [Route("heroes/{Id}")]
+        public GetByIdQueryResult Get(string Id) => 
+            _heroesHandle.GetById(ObjectId.Parse(Id));
+
+        [HttpPut]
+        [Route("heroes")]
+        public ICommandResult UpdateHero([FromBody] UpdateHeroesCommand command) =>
+            _heroesHandle.Handle(command);
+
+        [HttpDelete]
+        [Route("heroes")]
+        public ICommandResult RemoveHero([FromBody] DeleteHeroCommand command) =>
+            _heroesHandle.Handle(command);
+
     }
 }
